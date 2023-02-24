@@ -698,7 +698,12 @@ public:
         m_ParentIsOwner(true) {}
     virtual ~AP4_CencSingleSampleDecrypter();
     virtual AP4_Result SetFragmentInfo(AP4_UI32 poolid, const AP4_UI08* keyid, const AP4_UI08 nalu_length_size,
-      AP4_DataBuffer &annexb_sps_pps, AP4_UI32 flags) {
+                                       AP4_DataBuffer& annexb_sps_pps,
+                                       AP4_UI32 flags,
+                                       AP4_UI08 crypto_type,
+                                       AP4_UI08 skip_blocks,
+                                       AP4_UI08 crypt_blocks)
+    {
       return AP4_ERROR_NOT_SUPPORTED;
     };
     virtual AP4_UI32 AddPool() { return 0; };
